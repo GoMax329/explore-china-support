@@ -1,0 +1,124 @@
+:root {
+  --ink: #211b19;
+  --muted: #706663;
+  --paper: #fffdf8;
+  --wash: #f8f2e8;
+  --line: #eadfd2;
+  --red: #c63d32;
+  --red-dark: #963029;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 90% 0%, rgba(198, 61, 50, .09), transparent 30rem), var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+a { color: inherit; }
+.home-shell {
+  display: flex;
+  min-height: 100vh;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12vh 28px 56px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.brand-mark {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  border-radius: 20px;
+  background: var(--red);
+  color: white;
+  box-shadow: 0 14px 30px rgba(150, 48, 41, .18);
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 700;
+}
+.brand-mark.small { width: 36px; height: 36px; border-radius: 11px; font-size: 18px; box-shadow: none; }
+.eyebrow {
+  margin: 36px 0 12px;
+  color: var(--red-dark);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+h1 { max-width: 800px; margin: 0; font-size: clamp(42px, 8vw, 76px); line-height: .98; letter-spacing: -.055em; }
+.lede { max-width: 680px; margin: 24px 0 0; color: var(--muted); font-size: clamp(18px, 3vw, 23px); line-height: 1.55; }
+.home-links { display: grid; width: 100%; margin-top: 56px; border-top: 1px solid var(--line); }
+.home-links a {
+  display: flex;
+  padding: 24px 4px;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 720;
+}
+.home-links a:hover, .home-links a:focus-visible { color: var(--red); }
+.operator { margin-top: auto; padding-top: 72px; color: var(--muted); font-size: 13px; }
+.page-shell { width: min(100% - 40px, 920px); margin: 0 auto; }
+.site-header {
+  display: flex;
+  min-height: 86px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 820; }
+.site-header nav { display: flex; gap: 24px; }
+.site-header nav a { color: var(--muted); font-size: 14px; font-weight: 700; text-decoration: none; }
+.site-header nav a:hover, .site-header nav a:focus-visible { color: var(--red); }
+article { padding: 84px 0 40px; }
+.page-heading { padding-bottom: 56px; border-bottom: 1px solid var(--line); }
+.page-heading .eyebrow { margin-top: 0; }
+.page-heading h1 { font-size: clamp(44px, 7vw, 72px); }
+.document { max-width: 720px; padding: 20px 0 40px; }
+.document section { padding: 34px 0 8px; }
+.document h2 { margin: 0 0 14px; font-size: 22px; letter-spacing: -.025em; }
+.document p, .document li { color: #4f4744; font-size: 16px; line-height: 1.75; }
+.document p { margin: 10px 0; }
+.document ul, .document ol { margin: 10px 0; padding-left: 24px; }
+.document a { color: var(--red-dark); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.contact-card {
+  display: flex;
+  margin: 36px 0 8px;
+  padding: 24px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 12px 36px rgba(68, 51, 45, .06);
+}
+.contact-label { margin: 0 0 5px !important; color: var(--muted) !important; font-size: 12px !important; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; }
+.contact-email { font-weight: 750; }
+.email-button { flex: 0 0 auto; padding: 12px 18px; border-radius: 999px; background: var(--red); color: white !important; font-size: 14px; font-weight: 800; text-decoration: none; }
+.email-button:hover, .email-button:focus-visible { background: var(--red-dark); }
+.notice { margin-top: 20px !important; padding: 16px 18px; border-left: 3px solid var(--red); background: var(--wash); }
+footer {
+  display: flex;
+  min-height: 100px;
+  padding: 28px 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+footer a { overflow-wrap: anywhere; }
+@media (max-width: 620px) {
+  .site-header { align-items: flex-start; padding: 20px 0; gap: 18px; }
+  .site-header nav { padding-top: 9px; gap: 14px; }
+  article { padding-top: 58px; }
+  .page-heading { padding-bottom: 38px; }
+  .contact-card, footer { align-items: flex-start; flex-direction: column; }
+  .email-button { width: 100%; text-align: center; }
+}
